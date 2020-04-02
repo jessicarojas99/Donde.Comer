@@ -12,10 +12,9 @@
 */
 
 Route::get('/','InicioController@index')->name('inicio');
-Route::get('seguridad/login', 'Seguridad\LoginController@index')->name('login');
+Route::get('Seguridad/login','Seguridad\LoginController@index')->name('login');
 Route::group(['prefix' => 'admin','namespace'=> 'Admin', 'middleware' =>'auth'], function () {
-    Route::get('','AdminController@index');
-
+  Route::get('','AdminController@index'); 
 
 
 });

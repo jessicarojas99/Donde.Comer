@@ -4,21 +4,23 @@ namespace App\Http\Controllers\Seguridad;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Auth\Authenticatable;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers;
-    protected $redirectTo = '/home';
+    use Authenticatable;
+    protected $redirectTo="/admin";
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
-    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-         return View('seguridad.index');
+        return view('seguridad.index');
     }
-
-   
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +15,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return View('Admin.index');
+        return view('Admin.index');
     }
 
-    
+
 }
